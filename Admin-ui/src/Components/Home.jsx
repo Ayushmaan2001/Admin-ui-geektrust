@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {useFetch} from '../Hooks'
 import {Table,TableHeader} from './index';
+import SearchBar from './SearchBar';
 
 const Home = () => {
-    const {data} = useFetch();
+    let {data} = useFetch();
   return (
-    <div>
+    <div className='App'>
+        <SearchBar />
         <TableHeader />
         {
             data.map((item) => {
